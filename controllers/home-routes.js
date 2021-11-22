@@ -12,6 +12,8 @@ router.get('/', async (req, res) =>
     {
         res.status(400);
     }
-})
+});
+
+router.get('/blogs/:user')
 
 module.exports = router;
