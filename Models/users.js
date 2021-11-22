@@ -22,10 +22,7 @@ User.init(
             allowNull: false,
             validate:
             {
-                len: 
-                { args: [6, 15], msg: 'Please enter a password larger than 6 but shorter than 15 characters'},
-                isUppercase: true,
-                isLowercase: true
+                len: { args: [6, 15], msg: 'Please enter a password larger than 6 but shorter than 15 characters'},
             }
         }
     },
