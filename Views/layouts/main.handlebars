@@ -8,20 +8,25 @@
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
-<body>
+<body class= 'wholePageContainer'>
   <header>
-<nav>
-    <a>Home</a>
-    <a>Dashboard</a>
-    {{#if loggedIn}}
-    <a>Logout</a>
-    {{else}}
-    <a>Login</a>
-    {{/if}}
-</nav>
-<h1>The Tech Blog</h1>
+    <div class="titleContainer">
+      <nav>
+          <a href="/">Home</a>
+          <a href= '/dashboard'>Dashboard</a>
+          {{#if loggedIn}}
+          <a>Logout</a>
+          {{else}}
+          <a href= '/login'>Login</a>
+          {{/if}}
+      </nav>
+      <h1>The Tech Blog</h1>
+      </div>
   </header>
- 
+  <main>
+  {{{body}}}
+  </main>
+ <script src="/javascript/scipt.js"></script>
 </body>
 
 </html>
