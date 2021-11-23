@@ -8,11 +8,12 @@ const Comment = require('./comment');
 
 // Categories have many Products
 User.hasMany(Blog, {foreignKey: 'user_id', onDelete: 'CASCADE' , onUpdate:'CASCADE'});
-// Products belongsTo Category
 Blog.belongsTo(User, {foreignKey: 'user_id'});
 
 Blog.hasMany(Comment, {foreignKey: 'blog_id', onDelete: 'CASCADE', onUpdate: 'CASCADE'});
-
 Comment.belongsTo(Blog, {foreignKey: 'blog_id'});
+
+User.hasMany(Comment, {foreignKey: 'commenter_id', onDelete: 'CASCADE' , onUpdate:'CASCADE'});
+Comment.belongsTo(User, {foreignKey: 'commenter_id'});
 
 module.exports  = {User, Blog, Comment};

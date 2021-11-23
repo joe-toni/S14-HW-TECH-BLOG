@@ -19,6 +19,16 @@ Comment.init(
                 key: 'id'
             }
         },
+        commenterId:
+        {
+            type: DataTypes.INTEGER,
+            references:
+            {
+                model: 'user',
+                key: 'id'
+            }
+
+        },
         comment:
         {
             type: DataTypes.TEXT,

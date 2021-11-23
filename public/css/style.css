@@ -92,8 +92,10 @@ main
     background-color: var(--Currnet_black);
 }
 
-.demoTitle h2
+.demoTitle a
 {
+    color:  var(--Current_green);
+    text-decoration: none;
     margin: 0 30px;
 }
 
