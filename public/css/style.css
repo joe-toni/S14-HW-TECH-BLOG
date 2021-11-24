@@ -109,20 +109,21 @@ main
 .commentCard
 {
     width: 100%;
+    margin: 0 0 20px 0;
     border: 5px solid var(--Currnet_black);
     border-top: 30px solid var(--Currnet_black);
 }
 
 /*This is the end of the styling for the individual blogView*/
 
-.newPost
+.formContainer
 {
     border: 5px solid var(--Currnet_black);
     width: 100%;
     height: 400px;
 }
 
-.newPost h3
+.formContainer h3
 {
     margin: 0;
     height: 30px;
@@ -131,43 +132,52 @@ main
     background-color: var(--Currnet_black);
 }
 
-.newPost form
+.formContainer form
 {
-    height: 80%;
+    height: 90%;
     width: 80%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
 }
 
-.newPost form label
+.formContainer form label
 {
     margin: 10px 0;
     font-size: xx-large;
     color: var(--Currnet_black);
 }
 
-.newPost  .text
+.formContainer  .text
 {
+    height: 50px;
     border: 3px solid rgb(65, 128, 232);
+
 }
 
-.newPost #title
+.formContainer #title
 {
     height: 50px;
 }
 
-.newPost #content
+.formContainer #content
 {
-    margin: 0 0 20px 0;
     height: 100px;
 }
 
-.newPost #createBtn
+.formContainer #submitBtn
 {
+    margin: 20px 0 0 0;
     font-size: xx-large;
     color: white;
     background-color: grey;
     border-radius: 10px;
     height: 50px;
+}
+
+.formContainer a
+{
+    font-size: xx-large;
+    color: rgb(65, 128, 232);
+    text-decoration: none;
 }
