@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Blog } = require('../../models/index.js');
+const { User, Blog, Comment } = require('../../models/index.js');
 
 
 
@@ -39,9 +39,9 @@ router.get('/:id', async (req, res) =>
 router.post('/', async (req, res) => {
 try
 {
-    let user = req.body;
-  await User.create({user_name: user.user_name, password : user.password});
-  res.status(200).json( await User.findOne({where: {user_name: user.user_name}}));  
+    let {blogId, comment} = req.body;
+  const newComment = await Comment.create({blogId: blogId, comment: comment, commenterId: req.session.userId});
+  res.status(200).json( newComment);  
 } 
 catch(err)
 {

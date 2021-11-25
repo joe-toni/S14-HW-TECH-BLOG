@@ -20,7 +20,11 @@
           <a href= '/login'>Login</a>
           {{/if}}
       </nav>
-      <h1>The Tech Blog</h1>
+      {{#if dashboard}}
+      <h1>Your Dashboard</h1>
+      {{else}}
+        <h1>The Tech Blog</h1>
+      {{/if}}
       </div>
   </header>
   <main>

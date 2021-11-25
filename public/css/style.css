@@ -101,6 +101,29 @@
         This next Portion of styling is meant for the card type display component that will house the main blog, meaning
         its title and content each element might link or operate a little different from page to page but will appear the same.
     */
+.dashBlog
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: gray;
+    color: whitesmoke;
+    text-decoration: none;
+    height: 50px;
+    margin: 20px 0;
+    border-radius: 10px;
+    align-items: center;
+}
+.dashBlog h2
+{
+    margin: 0 30px;
+}
+.dashBlog p
+{
+    margin: 0 30px;
+}
+
+
 .blogDemo
 {
     text-decoration: none;
@@ -128,10 +151,20 @@
     margin: 0 30px;
 }
 
+.demoTitle h2
+{
+    margin: 0 30px;
+}
+
 .demoTitle p
 {
     color: var(--Current_green);
     margin: 0 30px;
+}
+
+.blogDemo p
+{
+    margin: 15px 30px;
 }
 
 /*This is the end of the styling for homepage*/
@@ -144,12 +177,17 @@
     border-top: 30px solid var(--Currnet_black);
 }
 
+.commentCard p
+{
+    margin: 15px 30px;
+}
+
 .createBtn
 {  
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 200px; 
+    width: 230px; 
     height: 100px; 
     align-self: center;
     font-size: xx-large;

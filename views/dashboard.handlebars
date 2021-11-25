@@ -1,18 +1,9 @@
 <div class= "container">
-    {{#each blogs as |blog|}}
-        <div class="blogDemo">    
-            <div class = 'demoTitle'>
-                <a href="/edit/{{blog.id}}"><h2>{{blog.blogName}}</h2></a> 
-                <p>{{blog.user.userName}}</p>
-            </div>
-            <p>{{blog.content}}</p>
-        </div>
-        {{#each blog.comments as |comment|}}
-            <div class = 'commentCard'>
-                <p>{{comment.comment}}</p>
-                <p> - {{comment.user.userName}}</p>
-            </div>
-        {{/each}} 
+    {{#each user.blogs as |blog|}}    
+            <a  href="/editpost/{{blog.id}}" class = 'dashBlog'>
+                <h2>{{blog.blogName}}</h2>
+                <p>{{format_date blog.updatedAt}}</p>
+            </a> 
     {{/each}}
-    <a class = "createBtn" href="/create/">+ New Post</a>
+    <a class = "createBtn" href="/createpost/">+ New Post</a>
 </div>

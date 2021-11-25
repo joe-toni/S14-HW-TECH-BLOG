@@ -3,7 +3,7 @@
 <div class = 'blogDemo' >
     <div class = 'demoTitle'>
         <a href="/blog/{{blog.id}}"><h2>{{blog.blogName}}</h2></a>
-        <p>{{blog.user.userName}}</p>
+        <p>Posted by {{blog.user.userName}} on {{format_date blog.createdAt}}</p>
     </div>
     <p>
         {{blog.content}}

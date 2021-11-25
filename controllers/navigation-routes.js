@@ -21,9 +21,10 @@ router.get('/dashboard',withAuth, async (req, res) =>
 {
     try
     {
-        let result = await Blog.findAll({where: {userId: req.session.userId}, include: [{model: User, attributes: ['userName']}, {model: Comment, include: {model: User, attributes: ['userName']}}]});
-        let blogs = result.map( (blog) => blog.get({plain: true}));
-       res.render('dashboard', {blogs, loggedIn: req.session.loggedIn});
+        let result = await User.findByPk(req.session.userId, {include:{model: Blog}})
+        let user = result.get({plain: true});
+        //res.json(user);
+       res.render('dashboard', {user, loggedIn: req.session.loggedIn, dashboard: true});
     }
     catch
     {
@@ -31,7 +32,7 @@ router.get('/dashboard',withAuth, async (req, res) =>
     }
 });
 
-router.get('/create', withAuth, async (req, res) =>
+router.get('/createpost', withAuth, async (req, res) =>
 {
     try
     {
@@ -43,7 +44,7 @@ router.get('/create', withAuth, async (req, res) =>
     }
 });
 
-router.get('/edit/:id', withAuth, async (req, res) =>
+router.get('/editpost/:id', withAuth, async (req, res) =>
 {
     try
     {
@@ -89,4 +90,21 @@ router.get('/blog/:id', async (req, res) =>
         res.status(400);
     }
 });
+
+router.get('/blog/:bid/comment/', async (req, res) =>
+{
+    try
+    {
+        let result = await Blog.findByPk(req.params.bid, {include: [{model: User, attributes: ['userName']}, {model: Comment, include: {model: User, attributes: ['userName']}}]});
+        let blog = result.get({plain: true});
+        res.render('addComment',{blog, loggedIn: req.session.loggedIn});
+    }
+    catch
+    {
+        res.status(400);
+    }
+});
+
+
+
 module.exports = router;

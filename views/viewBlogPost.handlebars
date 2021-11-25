@@ -1,8 +1,8 @@
 <div class = 'container'>
 <div class = 'blogDemo' >
     <div class = 'demoTitle'>
-        <a href="/blog/{{blog.id}}"><h2>{{blog.blogName}}</h2></a>
-        <p>{{blog.user.userName}}</p>
+        <h2>{{blog.blogName}}</h2>
+        <p>Posted by {{blog.user.userName}} on {{format_date blog.updatedAt}}</p>
     </div>
     <p>
         {{blog.content}}
@@ -11,8 +11,8 @@
 {{#each blog.comments as |comment|}}
 <div class = 'commentCard'>
     <p>{{comment.comment}}</p>
-    <p> - {{comment.user.userName}}</p>
+    <p> - {{comment.user.userName}}, {{format_date comment.updatedAt}}</p>
 </div>
 {{/each}}
-
+<a class = "createBtn" href="/blog/{{blog.id}}/comment">+ Add Comment</a>
 </div>

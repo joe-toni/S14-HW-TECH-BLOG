@@ -1,0 +1,19 @@
+<div class = 'container'>
+<div class = 'blogDemo' >
+    <div class = 'demoTitle'>
+        <h2>{{blog.blogName}}</h2>
+        <p>Posted by {{blog.user.userName}} on {{format_date blog.updatedAt}}</p>
+    </div>
+    <p>
+        {{blog.content}}
+    </p>
+</div>
+<div class = "formContainer">
+    <form onsubmit="addComment(event, {{blog.id}})">
+        <label for="comment">Comment</label>
+        <input class = 'text' type="textarea" id = 'content' name = 'comment'>
+        <input id = 'submitBtn' class="Btn" type="submit" value = "Submit">
+    </form>
+</div>
+<script src="/js/addComment.js"></script>
+</div>
