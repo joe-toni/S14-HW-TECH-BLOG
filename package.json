@@ -9,7 +9,7 @@
     "run": "nodemon server.js",
     "seed": "node seeds/index.js"
   },
-  "author": "",
+  "author": "Jose Faburrieta",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",

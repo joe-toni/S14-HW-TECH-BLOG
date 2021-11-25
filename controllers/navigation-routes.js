@@ -21,10 +21,9 @@ router.get('/dashboard',withAuth, async (req, res) =>
 {
     try
     {
-        console.log(req.session.userId);
-        let result = await User.findByPk(req.session.userId, {include: {model:Blog, include:{model: Comment, include: User}}})
-        let user = result.get({plain: true});
-       res.render('dashboard', {user, loggedIn: req.session.loggedIn});
+        let result = await Blog.findAll({where: {userId: req.session.userId}, include: [{model: User, attributes: ['userName']}, {model: Comment, include: {model: User, attributes: ['userName']}}]});
+        let blogs = result.map( (blog) => blog.get({plain: true}));
+       res.render('dashboard', {blogs, loggedIn: req.session.loggedIn});
     }
     catch
     {

@@ -1,80 +1,106 @@
-:root
-{
-    --Current_green: rgb(217,234,211);
-    --Current_grey: rgb(161,160,162);
-    --Currnet_black: rgb(35,16,16);
+/*main handlebars layout styling */
+    /*This portion of the css is meant to style the main layout of the site, it contains styling for the header and sizing
+    for the content containers that should remain the same through out all possible screens */
+    
+    /*
+        Here we establish most of the color variables we will be using for our pallete, 
+        obtained from the example display given for reference
+    */
+    :root
+        {
+            --Current_green: rgb(217,234,211);
+            --Current_grey: rgb(161,160,162);
+            --Currnet_black: rgb(35,16,16);
+        }
 
-}
+    /*
+        This initial declaration of sizing for the whole page will allow us to control
+        the way the page is allowed to display as it is zoomed in and out from, it will
+        also allow for easier inheratance of sizing to children elements
+    */
+    .wholePageContainer
+        {   
+         
+            background-color: var(--Current_green);
+            margin: 0 auto;
+            width: 100vw;
+            height: 98vh;
+            max-width: 1920px;
+        }
 
-.wholePageContainer
-{
-    background-color: var(--Current_green);
-    margin: 0 auto;
-    width: 100vw;
-    height: 98vh;
-    max-width: 1920px;
-    max-height: 1080px;
-}
+    /*
+        This Header Section contains the styling for the navigation bar and the title of the entire page
+        found at the top of the display
+    */
+    header
+        {
+            color: var(--Current_green);
+            background-color: var(--Currnet_black);
+            width: 100%;
+            height: 250px;
+        }
+        .titleContainer
+            {
+                padding: 30px 50px;
+                width: 500px;
+            }
+        nav
+            {
+                margin: 20px 0 50px 0;
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+            }
+            nav a
+                {
+                    font-size: xx-large;
+                    color: var(--Current_green);
+                    text-decoration: none;
+                }
 
+        h1
+            {
+                text-align: center;
+                width: 100%;
+                border-radius: 10px;
+                color: var(--Currnet_black);
+                background-color: var(--Current_green);
+                box-shadow: 5px 5px var(--Current_grey);
+            }
 
-header
-{
-    color: var(--Current_green);
-    width: 100%;
-    height: 25%;
-    background-color: var(--Currnet_black);
-}
-
-.titleContainer
-{
-    padding: 30px 50px;
-    width: 300px;
-}
-
-nav
-{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
-
-nav a
-{
-    font-size: x-large;
-    color: var(--Current_green);
-    text-decoration: none;
-}
-
-h1
-{
-    text-align: center;
-    width: 100%;
-    border-radius: 10px;
-    color: var(--Currnet_black);
-    background-color: var(--Current_green);
-    box-shadow: 5px 5px var(--Current_grey);
-
-}
-
-main
-{
-    background-color: var(--Current_green);
-    width: 98%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+    /*
+        This container is established to house what ever the main body will end up being up
+        rendering the new page with an established size for inhereting 
+    */
+    main
+        {
+            background-color: var(--Current_green);
+            width: 98%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 /*Styling for the main page ends here*/
 
-.container
-{
-    width: 80%;
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-}
+/*Component Styling*/
+        /*This portion of the css focuses of styling of classes that will be used for components established through out a
+        number of the possible screens since each page will use some variation of a component general setting can be used*/
 
+    /*
+        The container is used to place the contents of each page at the center of the body container with out having to caluclate
+        sizing for each individual component
+    */            
+    .container
+        {
+            width: 80%;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+        }
+    /*
+        This next Portion of styling is meant for the card type display component that will house the main blog, meaning
+        its title and content each element might link or operate a little different from page to page but will appear the same.
+    */
 .blogDemo
 {
     text-decoration: none;
@@ -104,7 +130,7 @@ main
 
 .demoTitle p
 {
-    color: var(--Currnet_black);
+    color: var(--Current_green);
     margin: 0 30px;
 }
 
