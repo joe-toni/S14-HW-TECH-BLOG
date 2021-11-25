@@ -105,6 +105,21 @@ router.get('/blog/:bid/comment/', async (req, res) =>
     }
 });
 
+router.get('/blog/comment/:id', async (req, res) =>
+{
+    try
+    {  
+        let commentResult = await Comment.findByPk(req.params.id, {include: [{model: User, attributes: ['userName']}, {model: Blog, include: {model: User}}]});
+        let comment = commentResult.get({plain: true});
+        //res.json(comment);
+        res.render('editComment',{comment, loggedIn: req.session.loggedIn});
+    }
+    catch
+    {
+        res.status(400);
+    }
+});
+
 
 
 module.exports = router;

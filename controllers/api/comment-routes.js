@@ -34,8 +34,6 @@ router.get('/:id', async (req, res) =>
 });
 
 
-
-
 router.post('/', async (req, res) => {
 try
 {
@@ -47,26 +45,26 @@ catch(err)
 {
   res.status(400).json(err);
 }
-  // create a new User
 });
 
-router.put('/:id', async (req, res) => {
-  try
-  {
-    await User.update({user_name: req.body.user_name}, {where: {id: req.params.id}})
-    res.status(200).json(await User.findOne({where: {id: req.params.id}}));
-  }
-  catch(err)
-  {
-    res.status(400).json(err);
-  }
-  // update a User's name by its `id` value
+router.put('/:id', async (req, res) => 
+{
+    try
+        {
+            let {comment} = req.body;
+            let result = await Comment.update({comment: comment}, {where: {id: req.params.id}});
+            res.status(200).json(result);
+        }
+    catch(err)
+        {
+            res.status(400).json(err);
+        }
 });
 
 router.delete('/:id', async (req, res) => {
 try
 {
-  let result = await User.destroy({where: {id: req.params.id}});
+  let result = await Comment.destroy({where: {id: req.params.id}});
   res.status(200).json(result);
 }
 catch(err)

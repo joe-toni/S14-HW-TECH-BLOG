@@ -9,10 +9,10 @@
     </p>
 </div>
 {{#each blog.comments as |comment|}}
-<div class = 'commentCard'>
+<a href="/blog/comment/{{comment.id}}" class = 'commentCard'>
     <p>{{comment.comment}}</p>
     <p> - {{comment.user.userName}}, {{format_date comment.updatedAt}}</p>
-</div>
+</a>
 {{/each}}
 <a class = "createBtn" href="/blog/{{blog.id}}/comment">+ Add Comment</a>
 </div>

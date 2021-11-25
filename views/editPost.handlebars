@@ -5,7 +5,7 @@
         <label for= 'title'>Title</label>
         <input class = 'text' type="text" id = 'title' name = 'title' value="{{blog.blogName}}">
         <label for="content">Content</label>
-        <input class = 'text' type="textarea" id = 'content' name = 'content' value="{{blog.content}}">
+        <textarea class = 'text'  id = 'content' name = 'content'>{{blog.content}}</textarea>
         <input id = 'submitBtn' class = 'Btn' type="submit" value = "Update Post">
         <input id = 'deleteBtn'  class="Btn" type="button" value="Delete" onclick="deletePost({{blog.id}})">
     </form>

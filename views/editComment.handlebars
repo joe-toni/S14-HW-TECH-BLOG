@@ -1,0 +1,20 @@
+<div class = 'container'>
+<div class = 'blogDemo' >
+    <div class = 'demoTitle'>
+        <h2>{{comment.blog.blogName}}</h2>
+        <p>Posted by {{comment.blog.user.userName}} on {{format_date comment.blog.updatedAt}}</p>
+    </div>
+    <p>
+        {{comment.blog.content}}
+    </p>
+</div>
+<div class = "formContainer">
+    <form onsubmit="updateComment(event, {{comment.blog.id}}, {{comment.id}})">
+        <label for="comment">Comment</label>
+        <textarea class = 'text'  id = 'content' name = 'comment'>{{comment.comment}}</textarea>
+        <input id = 'submitBtn' class="Btn" type="submit" value = "Update">
+        <input id = 'deleteBtn'  class="Btn" type="button" value="Delete" onclick="deletePost({{comment.blog.id}},{{comment.id}})">
+    </form>
+</div>
+<script src="/js/editComment.js"></script>
+</div>
