@@ -1,0 +1,14 @@
+<div class = 'container'>
+<div class = "formContainer">
+    <h3>Edit Post</h3>
+    <form onsubmit="updatePostFormHandler(event,{{blog.id}})">
+        <label for= 'title'>Title</label>
+        <input class = 'text' type="text" id = 'title' name = 'title' value="{{blog.blogName}}">
+        <label for="content">Content</label>
+        <input class = 'text' type="textarea" id = 'content' name = 'content' value="{{blog.content}}">
+        <input id = 'submitBtn' class = 'Btn' type="submit" value = "Update Post">
+        <input id = 'deleteBtn'  class="Btn" type="button" value="Delete" onclick="deletePost({{blog.id}})">
+    </form>
+    <script src="/js/updatePost.js"></script>
+</div>
+</div>

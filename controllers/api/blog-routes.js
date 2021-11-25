@@ -40,12 +40,13 @@ router.post('/', async (req, res) =>
 {
     try
         {
-            let {userId, blogName, description, content} = req.body;
-            await Blog.create({userId: userId, blogName: blogName, description: description, content: content});
-            res.status(200).json( await Blog.findOne({where: {blogName: blogName}}));  
+            let {blogName, content} = req.body;
+            const newBlog = await Blog.create({userId: req.session.userId, blogName: blogName, content: content});
+            res.status(200).json(newBlog);
         } 
     catch(err)
         {
+            console.log(err);
             res.status(400).json(err);
         }
 });
@@ -56,9 +57,9 @@ router.put('/:id', async (req, res) =>
 {
     try
         {
-            let {userId, blogName, description, content} = req.body;
-            await Blog.update({blogName: blogName, description: description, content: content}, {where: {id: req.params.id}})
-            res.status(200).json(await Blog.findOne({where: {id: req.params.id}}));
+            let {blogName, content} = req.body;
+            let result = await Blog.update({blogName: blogName, content: content}, {where: {id: req.params.id}})
+            res.status(200).json(result);
         }
     catch(err)
         {
