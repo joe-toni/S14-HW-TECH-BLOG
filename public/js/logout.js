@@ -1,3 +1,6 @@
+//This scipt is meant for the logout button that is presented on the main page only when the 
+// user has logged in and it makes a request to the logout field on the user api  route, if the request 
+// is successful then the user is redirected to the main page.
 const logout = async () => {
   const response = await fetch('/api/user/logout', {
     method: 'POST',

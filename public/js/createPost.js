@@ -1,3 +1,6 @@
+//This script sheet is meant to handle the form provided by the createNewPost view page
+//It takes the values found on the form and passes them to the post route on the blog api route
+//if the post is successful then the script will redirect the site to the correstponding dashboard of the logged in user
 const createPostFormHandler = async (event) => {
     event.preventDefault();
   

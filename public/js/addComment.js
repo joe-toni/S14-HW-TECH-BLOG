@@ -1,3 +1,6 @@
+//This script page is meant to handle the form provided by the addComment view page
+//It expects to be given the blog id that will be used to associate the new comment to the corresponding
+// blog and redirect the page to that same blog if the post is successful.
 const addComment = async (event, blogId) => {
     event.preventDefault();
   

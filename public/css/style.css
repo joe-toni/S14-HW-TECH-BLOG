@@ -80,7 +80,8 @@
             flex-direction: column;
             align-items: center;
         }
-/*Styling for the main page ends here*/
+    /*Styling for the main page ends here*/
+/*This is the end of the styling for the main layout*/
 
 /*Component Styling*/
         /*This portion of the css focuses of styling of classes that will be used for components established through out a
@@ -98,171 +99,167 @@
             flex-direction: column;
         }
     /*
-        This next Portion of styling is meant for the card type display component that will house the main blog, meaning
-        its title and content each element might link or operate a little different from page to page but will appear the same.
+        This next Portion of styling is meant for the display of the blogs in a user's personal dashboard
     */
-.dashBlog
-{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    background-color: gray;
-    color: whitesmoke;
-    text-decoration: none;
-    height: 50px;
-    margin: 20px 0;
-    border-radius: 10px;
-    align-items: center;
-}
-.dashBlog h2
-{
-    margin: 0 30px;
-}
-.dashBlog p
-{
-    margin: 0 30px;
-}
+    .dashBlog
+        {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            background-color: gray;
+            color: whitesmoke;
+            text-decoration: none;
+            height: 50px;
+            margin: 20px 0;
+            border-radius: 10px;
+            align-items: center;
+        }
+        .dashBlog h2
+        {
+            margin: 0 30px;
+        }
+        .dashBlog p
+        {
+            margin: 0 30px;
+        }
+    /*This is the end of the styling for the dashboard blog display component*/
 
+    /*
+        This portion of the css is meant to style the blog displays used in almost every page containing posts, unlike the ones found in the dashboard
+        the ones found elsewhere have a mofe spread out view that presents more information on each blog.
+    */
+    .blogDemo
+        {
+            text-decoration: none;
+            height: auto;
+            width: 100%;
+            margin: 20px 0;
+            border: 5px solid var(--Currnet_black);
+        }
+        .demoTitle
+            {
+                height: 50px;
+                width: 100%;
+                display: flex;  
+                align-items: center;
+                justify-content: space-between;
+                color: var(--Current_green);
+                background-color: var(--Currnet_black);
+            }
+        .demoTitle a
+            {
+                color:  var(--Current_green);
+                text-decoration: none;
+                margin: 0 30px;
+            }
+        .demoTitle h2
+            {
+                margin: 0 30px;
+            }
+        .demoTitle p
+            {
+                color: var(--Current_green);
+                margin: 0 30px;
+            }
+        .blogDemo p
+            {
+                margin: 15px 30px;
+            }
+    /*This is the end of the styling for the main blog display components*/
+    
+    /*
+        This portion of the css is decated to styling the comment cards that appear whenever a user views a specific blog post
+    */
+    .commentCard
+        {
+            text-decoration: none;
+            width: 100%;
+            margin: 0 0 20px 0;
+            border: 5px solid var(--Currnet_black);
+            border-top: 30px solid var(--Currnet_black);
+        }
+        .commentCard p
+            {
+                color: var(--Currnet_black);
+                margin: 15px 30px;
+            }
+        .createBtn
+            {  
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 230px; 
+                height: 100px; 
+                align-self: center;
+                font-size: xx-large;
+                border-radius: 10px;
+                text-decoration: none;
+                color: var(--Current_green);
+                background-color: var(--Currnet_black);
+            }
+    /*This is the end of the styling for the comment card component*/
 
-.blogDemo
-{
-    text-decoration: none;
-    height: auto;
-    width: 100%;
-    margin: 20px 0;
-    border: 5px solid var(--Currnet_black);
-}
+    /*
+        This next portion of the css styles the forms used to submit, edit or delete users, blogs, and coments since the form
+        stays mostly the same in each itteration the same classes have been used to refer to specific components of each form
+    */
+    .formContainer
+        {
+            border: 5px solid var(--Currnet_black);
+            width: 100%;
+            height: auto;
+        }
+         .formContainer h3
+             {
+                 margin: 0;
+                 height: 30px;
+                 width: 100%;
+                 color: var(--Current_green);
+                 background-color: var(--Currnet_black);
+             }
+        .formContainer form
+            {
+                height: 90%;
+                width: 80%;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: column;
+            }
+        .formContainer form label
+            {
+                margin: 10px 0;
+                font-size: xx-large;
+                color: var(--Currnet_black);
+            }
+        .formContainer  .text
+            {
+                height: 50px;
+                border: 3px solid rgb(65, 128, 232);
+                font-size: x-large;
+            }
+        .formContainer #title
+            {
+                height: 50px;
+            }
 
-.demoTitle
-{
-    height: 50px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--Current_green);
-    background-color: var(--Currnet_black);
-}
-
-.demoTitle a
-{
-    color:  var(--Current_green);
-    text-decoration: none;
-    margin: 0 30px;
-}
-
-.demoTitle h2
-{
-    margin: 0 30px;
-}
-
-.demoTitle p
-{
-    color: var(--Current_green);
-    margin: 0 30px;
-}
-
-.blogDemo p
-{
-    margin: 15px 30px;
-}
-
-/*This is the end of the styling for homepage*/
-
-.commentCard
-{
-    width: 100%;
-    margin: 0 0 20px 0;
-    border: 5px solid var(--Currnet_black);
-    border-top: 30px solid var(--Currnet_black);
-}
-
-.commentCard p
-{
-    margin: 15px 30px;
-}
-
-.createBtn
-{  
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 230px; 
-    height: 100px; 
-    align-self: center;
-    font-size: xx-large;
-    border-radius: 10px;
-    text-decoration: none;
-    color: var(--Current_green);
-    background-color: var(--Currnet_black);
-
-
-}
-
-/*This is the end of the styling for the individual blogView*/
-
-.formContainer
-{
-    border: 5px solid var(--Currnet_black);
-    width: 100%;
-    height: auto;
-}
-
-.formContainer h3
-{
-    margin: 0;
-    height: 30px;
-    width: 100%;
-    color: var(--Current_green);
-    background-color: var(--Currnet_black);
-}
-
-.formContainer form
-{
-    height: 90%;
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.formContainer form label
-{
-    margin: 10px 0;
-    font-size: xx-large;
-    color: var(--Currnet_black);
-}
-
-.formContainer  .text
-{
-    height: 50px;
-    border: 3px solid rgb(65, 128, 232);
-
-}
-
-.formContainer #title
-{
-    height: 50px;
-}
-
-.formContainer #content
-{
-    height: 100px;
-}
-
-.formContainer .Btn
-{
-    margin: 20px 0;
-    font-size: xx-large;
-    color: white;
-    background-color: grey;
-    border-radius: 10px;
-    height: 50px;
-}
-
-.formContainer a
-{
-    font-size: xx-large;
-    color: rgb(65, 128, 232);
-    text-decoration: none;
-}
+        .formContainer #content
+            {
+                height: 100px;
+            }
+        .formContainer .Btn
+            {
+                margin: 20px 0;
+                font-size: xx-large;
+                color: white;
+                background-color: grey;
+                border-radius: 10px;
+                height: 50px;
+            }       
+        .formContainer a
+            {
+                font-size: xx-large;
+                color: rgb(65, 128, 232);
+                text-decoration: none;
+            }
+    /*This is the end for the styling of the form container compontnet and its elements
+/*This is the end of the styling for the induvidual commponents used through out the pages*/
