@@ -69,14 +69,14 @@ router.get('/signup', async (req, res) =>
     { res.status(400);}
 });
 
-router.get('/login', async (req, res) =>
-{
-    try
-    {res.render('login',{loggedIn:req.session.loggedIn});}
-    catch    
-    {res.status(400);}
-});
-
+router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    }
+    res.render('login', {loggedIn: req.session.loggedIn});
+  });
+  
 router.get('/blog/:id', async (req, res) =>
 {
     try
@@ -91,7 +91,7 @@ router.get('/blog/:id', async (req, res) =>
     }
 });
 
-router.get('/blog/:bid/comment/', async (req, res) =>
+router.get('/blog/:bid/comment/', withAuth ,async (req, res) =>
 {
     try
     {
@@ -105,14 +105,16 @@ router.get('/blog/:bid/comment/', async (req, res) =>
     }
 });
 
-router.get('/blog/comment/:id', async (req, res) =>
+router.get('/blog/comment/:id', withAuth, async (req, res) =>
 {
     try
     {  
         let commentResult = await Comment.findByPk(req.params.id, {include: [{model: User, attributes: ['userName']}, {model: Blog, include: {model: User}}]});
         let comment = commentResult.get({plain: true});
-        //res.json(comment);
-        res.render('editComment',{comment, loggedIn: req.session.loggedIn});
+        if(comment.commenterId === req.session.userId)
+        {res.render('editComment',{comment, loggedIn: req.session.loggedIn});}
+        else
+        { res.redirect(`/blog/${comment.blogId}`);}
     }
     catch
     {
